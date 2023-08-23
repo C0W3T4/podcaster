@@ -20,9 +20,7 @@ export function Header() {
           quality={100}
         />
       </Link>
-
       <p>O melhor para você ouvir, sempre</p>
-
       <span>{currentDate}</span>
     </header>
   )

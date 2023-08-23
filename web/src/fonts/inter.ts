@@ -6,4 +6,6 @@ export const inter = Inter({
   style: ['normal'],
   weight: ['300', '400', '500', '600'],
   variable: '--font-inter',
+  adjustFontFallback: true,
+  preload: true,
 })

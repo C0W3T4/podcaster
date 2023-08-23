@@ -57,7 +57,7 @@ export default async function Episode({ params: { slug } }: EpisodeProps) {
             <Image
               src="/arrow-left.svg"
               alt="Voltar"
-              width={16}
+              width={10}
               height={16}
               quality={100}
               style={{
@@ -67,15 +67,15 @@ export default async function Episode({ params: { slug } }: EpisodeProps) {
           </button>
         </Link>
         <Image
-          width={645}
-          height={645}
           src={episode.thumbnail}
           alt="Thumbnail"
           style={{
-            aspectRatio: '1/1',
             objectFit: 'cover',
             borderRadius: '1rem',
           }}
+          fill
+          priority
+          sizes="100%"
           quality={100}
         />
         <PlayButton episode={episode} />

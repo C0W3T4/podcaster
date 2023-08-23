@@ -178,14 +178,20 @@ export function Player() {
                 src="/pause.svg"
                 alt="Pause"
                 quality={100}
+                style={{
+                  aspectRatio: '1/1',
+                }}
               />
             ) : (
               <Image
                 width={32}
                 height={32}
                 src="/play.svg"
-                alt="Tocar"
+                alt="Tocar episódio"
                 quality={100}
+                style={{
+                  aspectRatio: '1/1',
+                }}
               />
             )}
           </button>

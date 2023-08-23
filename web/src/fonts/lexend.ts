@@ -6,4 +6,6 @@ export const lexend = Lexend({
   style: ['normal'],
   weight: ['500', '600'],
   variable: '--font-lexend',
+  adjustFontFallback: true,
+  preload: true,
 })
