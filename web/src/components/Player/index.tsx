@@ -84,8 +84,8 @@ export function Player() {
       {episode ? (
         <div className={styles.currentEpisode}>
           <Image
-            width={592}
-            height={592}
+            width={364}
+            height={364}
             src={episode.thumbnail}
             alt={episode.title || 'Thumbnail'}
             style={{
