@@ -67,7 +67,7 @@ export default async function Episode({ params: { slug } }: EpisodeProps) {
           <button type="button" className="flex items-center justify-center">
             <Image
               src="/arrow-left.svg"
-              alt="Voltar"
+              alt="Back"
               width={10}
               height={16}
               quality={100}

@@ -20,7 +20,7 @@ export const PlayButton = ({ episode }: PlayButtonProps) => {
     >
       <Image
         src="/play.svg"
-        alt="Tocar episódio"
+        alt="Play episode"
         width={48}
         height={48}
         quality={100}

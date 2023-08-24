@@ -21,7 +21,7 @@ export function LatestEpisodes({
 
   return (
     <section className={styles.latestEpisodes}>
-      <h2>Últimos lançamentos</h2>
+      <h2>Latest releases</h2>
       <ul>
         {latestEpisodes.map((episode, index) => {
           return (
@@ -30,7 +30,7 @@ export function LatestEpisodes({
                 width={120}
                 height={120}
                 src={episode.thumbnail}
-                alt={episode.title}
+                alt={episode.title || 'Thumbnail'}
                 style={{
                   aspectRatio: '1/1',
                   objectFit: 'cover',
@@ -52,7 +52,7 @@ export function LatestEpisodes({
               >
                 <Image
                   src="/play-green.svg"
-                  alt="Tocar episódio"
+                  alt="Play episode"
                   width={40}
                   height={40}
                   quality={100}

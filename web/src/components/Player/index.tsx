@@ -76,10 +76,10 @@ export function Player() {
           width={32}
           height={32}
           src="/playing.svg"
-          alt="Tocando agora"
+          alt="Playing now"
           quality={100}
         />
-        <strong>Tocando agora</strong>
+        <strong>Playing now</strong>
       </header>
       {episode ? (
         <div className={styles.currentEpisode}>
@@ -87,7 +87,7 @@ export function Player() {
             width={592}
             height={592}
             src={episode.thumbnail}
-            alt="Thumbnail"
+            alt={episode.title || 'Thumbnail'}
             style={{
               aspectRatio: '1/1',
               objectFit: 'cover',
@@ -100,7 +100,7 @@ export function Player() {
         </div>
       ) : (
         <div className={styles.emptyPlayer}>
-          <strong>Selecione um podcast para ouvir</strong>
+          <strong>Select a podcast to listen to</strong>
         </div>
       )}
       <footer className={!episode ? styles.empty : ''}>
@@ -145,7 +145,7 @@ export function Player() {
               width={24}
               height={24}
               src="/shuffle.svg"
-              alt="Embaralhar"
+              alt="Shuffle"
               quality={100}
             />
           </button>
@@ -158,7 +158,7 @@ export function Player() {
               width={24}
               height={24}
               src="/play-previous.svg"
-              alt="Tocar anterior"
+              alt="Play previous"
               quality={100}
             />
           </button>
@@ -184,7 +184,7 @@ export function Player() {
                 width={32}
                 height={32}
                 src="/play.svg"
-                alt="Tocar episódio"
+                alt="Play episode"
                 quality={100}
                 style={{
                   aspectRatio: '1/1',
@@ -201,7 +201,7 @@ export function Player() {
               width={24}
               height={24}
               src="/play-next.svg"
-              alt="Tocar próxima"
+              alt="Play next"
               quality={100}
             />
           </button>
@@ -215,7 +215,7 @@ export function Player() {
               width={24}
               height={24}
               src="/repeat.svg"
-              alt="Repetir"
+              alt="Repeat"
               quality={100}
             />
           </button>

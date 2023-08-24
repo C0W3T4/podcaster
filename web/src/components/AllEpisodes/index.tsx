@@ -18,15 +18,15 @@ export function AllEpisodes({ latestEpisodes, allEpisodes }: AllEpisodesProps) {
 
   return (
     <section className={styles.allEpisodes}>
-      <h2>Todos episódios</h2>
+      <h2>All Episodes</h2>
       <table cellSpacing={0}>
         <thead>
           <tr>
             <th></th>
             <th>Podcast</th>
-            <th>Integrantes</th>
-            <th>Data</th>
-            <th>Duração</th>
+            <th>Members</th>
+            <th>Date</th>
+            <th>Duration</th>
             <th></th>
           </tr>
         </thead>
@@ -39,7 +39,7 @@ export function AllEpisodes({ latestEpisodes, allEpisodes }: AllEpisodesProps) {
                     width={120}
                     height={120}
                     src={episode.thumbnail}
-                    alt={episode.title}
+                    alt={episode.title || 'Thumbnail'}
                     style={{
                       aspectRatio: '1/1',
                       objectFit: 'cover',
@@ -65,7 +65,7 @@ export function AllEpisodes({ latestEpisodes, allEpisodes }: AllEpisodesProps) {
                   >
                     <Image
                       src="/play-green.svg"
-                      alt="Tocar episódio"
+                      alt="Play episode"
                       width={40}
                       height={40}
                       quality={100}
