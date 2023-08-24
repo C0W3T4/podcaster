@@ -19,7 +19,6 @@ export function AllEpisodes({ latestEpisodes, allEpisodes }: AllEpisodesProps) {
   return (
     <section className={styles.allEpisodes}>
       <h2>Todos episódios</h2>
-
       <table cellSpacing={0}>
         <thead>
           <tr>

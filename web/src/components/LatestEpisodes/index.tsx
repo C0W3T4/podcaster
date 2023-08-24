@@ -22,7 +22,6 @@ export function LatestEpisodes({
   return (
     <section className={styles.latestEpisodes}>
       <h2>Últimos lançamentos</h2>
-
       <ul>
         {latestEpisodes.map((episode, index) => {
           return (
@@ -39,7 +38,6 @@ export function LatestEpisodes({
                 }}
                 quality={100}
               />
-
               <div className={styles.episodeDetails}>
                 <Link href={`/episodes/${episode.id}`}>
                   <span>{episode.title}</span>
@@ -48,7 +46,6 @@ export function LatestEpisodes({
                 <span>{episode.publishedAt}</span>
                 <span>{episode.durationAsString}</span>
               </div>
-
               <button
                 type="button"
                 onClick={() => playList(episodeList, index)}

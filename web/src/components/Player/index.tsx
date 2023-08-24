@@ -41,7 +41,7 @@ export function Player() {
     }
   }, [isPlaying])
 
-  function setupProgressListener() {
+  function setupProgressListener(): void {
     if (audioRef.current) {
       audioRef.current.currentTime = 0
 
@@ -51,19 +51,20 @@ export function Player() {
     }
   }
 
-  function handleSeek(amount: number | number[]) {
-    if (audioRef.current && typeof amount === 'number') {
-      audioRef.current.currentTime = amount
-      setProgress(amount)
+  function handleSeek(amount: number | number[]): void {
+    if (audioRef.current) {
+      if (typeof amount === 'number') {
+        audioRef.current.currentTime = amount
+        setProgress(amount)
+      } else if (Array.isArray(amount)) {
+        audioRef.current.currentTime = amount[0]
+        setProgress(amount[0])
+      }
     }
   }
 
-  function handleEpisodeEnded() {
-    if (hasNext) {
-      playNext()
-    } else {
-      clearPlayerState()
-    }
+  function handleEpisodeEnded(): void {
+    hasNext ? playNext() : clearPlayerState()
   }
 
   const episode = episodeList[currentEpisodeIndex]
@@ -80,7 +81,6 @@ export function Player() {
         />
         <strong>Tocando agora</strong>
       </header>
-
       {episode ? (
         <div className={styles.currentEpisode}>
           <Image
@@ -103,7 +103,6 @@ export function Player() {
           <strong>Selecione um podcast para ouvir</strong>
         </div>
       )}
-
       <footer className={!episode ? styles.empty : ''}>
         <div className={styles.progress}>
           <span>{convertDurationToTimeString(progress)}</span>
@@ -123,7 +122,6 @@ export function Player() {
           </div>
           <span>{convertDurationToTimeString(episode?.duration ?? 0)}</span>
         </div>
-
         {episode && (
           <audio
             src={episode.url}
@@ -136,7 +134,6 @@ export function Player() {
             onLoadedMetadata={setupProgressListener}
           />
         )}
-
         <div className={styles.buttons}>
           <button
             type="button"
