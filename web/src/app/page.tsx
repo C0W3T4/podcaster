@@ -3,7 +3,7 @@ import { LatestEpisodes } from '@/components/LatestEpisodes'
 import { EpisodeData, EpisodeResponseData } from '@/types/episodes'
 import { convertDurationToTimeString } from '@/utils/convertDurationToTimeString'
 import { format, parseISO } from 'date-fns'
-import { ptBR } from 'date-fns/locale'
+import { enUS } from 'date-fns/locale'
 import styles from './styles.module.scss'
 
 export default async function Home() {
@@ -30,7 +30,7 @@ export default async function Home() {
         thumbnail: episode.thumbnail,
         members: episode.members,
         publishedAt: format(parseISO(episode.publishedAt), 'd MMM yy', {
-          locale: ptBR,
+          locale: enUS,
         }),
         duration: Number(episode.file.duration),
         durationAsString: convertDurationToTimeString(

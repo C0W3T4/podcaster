@@ -1,12 +1,12 @@
 import format from 'date-fns/format'
-import ptBR from 'date-fns/locale/pt-BR'
+import { enUS } from 'date-fns/locale'
 import Image from 'next/image'
 import Link from 'next/link'
 import styles from './styles.module.scss'
 
 export function Header() {
-  const currentDate = format(new Date(), 'EEEEEE, d MMMM', {
-    locale: ptBR,
+  const currentDate = format(new Date(), 'EEEE, d MMMM', {
+    locale: enUS,
   })
 
   return (

@@ -2,7 +2,7 @@ import { PlayButton } from '@/components/PlayButton'
 import { EpisodeData, EpisodeResponseData } from '@/types/episodes'
 import { convertDurationToTimeString } from '@/utils/convertDurationToTimeString'
 import { format, parseISO } from 'date-fns'
-import { ptBR } from 'date-fns/locale'
+import { enUS } from 'date-fns/locale'
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -44,8 +44,8 @@ export default async function Episode({ params: { slug } }: EpisodeProps) {
         description: data.description,
         thumbnail: data.thumbnail,
         members: data.members,
-        publishedAt: format(parseISO(data.publishedAt), 'd MMM yy', {
-          locale: ptBR,
+        publishedAt: format(parseISO(data.publishedAt), 'd MMMM yyyy', {
+          locale: enUS,
         }),
         duration: Number(data.file.duration),
         durationAsString: convertDurationToTimeString(
