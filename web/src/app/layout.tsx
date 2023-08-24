@@ -14,6 +14,10 @@ export const metadata: Metadata = {
   },
   description:
     'Application that allows users to play episodes of their favorite podcasts',
+  robots: {
+    index: true,
+    follow: true,
+  },
 }
 
 interface RootLayoutProps {

@@ -3,6 +3,7 @@ import { EpisodeData, EpisodeResponseData } from '@/types/episodes'
 import { convertDurationToTimeString } from '@/utils/convertDurationToTimeString'
 import { format, parseISO } from 'date-fns'
 import { ptBR } from 'date-fns/locale'
+import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import styles from './styles.module.scss'
@@ -10,6 +11,16 @@ import styles from './styles.module.scss'
 type EpisodeProps = {
   params: {
     slug: string
+  }
+}
+
+export async function generateMetadata({
+  params,
+}: EpisodeProps): Promise<Metadata> {
+  const slug = params?.slug
+
+  return {
+    title: slug || 'Episode details',
   }
 }
 
