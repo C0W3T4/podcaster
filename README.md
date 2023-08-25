@@ -14,7 +14,7 @@ This project was developed using the following technologies:
 - [Next.js](https://nextjs.org/)
 - [React](https://react.dev/)
 - [Tailwind CSS](https://tailwindcss.com/)
-- [Axios](https://axios-http.com/)
+- [JSON Server](https://github.com/typicode/json-server)
 - [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML)
 - [Sass](https://sass-lang.com/)
 - [ESLint](https://eslint.org/)
